@@ -1,5 +1,5 @@
 #!/usr/bin/node
-import ClassRoom from "./0-classroom";
+import ClassRoom from './0-classroom';
 
 /**
  * Creates an array of {@link ClassRoom}s with a specific size.
