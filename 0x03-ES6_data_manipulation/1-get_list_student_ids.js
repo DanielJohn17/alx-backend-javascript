@@ -1,6 +1,6 @@
 #!/usr/bin/node
 export default function getListStudentIds(students) {
-  if (typeof students !== 'object') {
+  if (!(students instanceof Array)) {
     return [];
   }
 
