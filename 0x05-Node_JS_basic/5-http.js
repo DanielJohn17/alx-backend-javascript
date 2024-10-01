@@ -1,5 +1,6 @@
 #!/usr/bin/node
 const http = require('http');
+const fs = require('fs');
 
 const PORT = 1245;
 const HOST = 'localhost';
