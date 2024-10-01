@@ -6,7 +6,7 @@ const countStudents = (dataPath) => {
   const fields = {};
   let length = 0;
 
-  try{
+  try {
     const fileContents = fs.readFileSync(dataPath, 'utf-8');
     const lines = fileContents.toString().split('\n');
 
@@ -15,7 +15,7 @@ const countStudents = (dataPath) => {
         length += 1;
         const field = lines[i].toString().split(',');
         if (Object.prototype.hasOwnProperty.call(students, field[3])) {
-         students[field[3]].push(field[0]);
+          students[field[3]].push(field[0]);
         } else {
           students[field[3]] = [field[0]];
         }
@@ -24,7 +24,7 @@ const countStudents = (dataPath) => {
         } else {
           fields[field[3]] = 1;
         }
-      } 
+      }
     }
 
     const l = length - 1;
@@ -35,10 +35,9 @@ const countStudents = (dataPath) => {
         console.log(`Number of students in ${key}: ${value}. List: ${students[key.join(', ')]}`);
       }
     }
-  }
-  catch (error){
+  } catch (error) {
     throw Error('Cannot load the database');
   }
-}
+};
 
 module.exports = countStudents;
