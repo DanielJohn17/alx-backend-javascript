@@ -8,7 +8,7 @@ const countStudents = (dataPath) => {
 
   try {
     const fileContents = fs.readFileSync(dataPath, 'utf-8');
-    const lines = fileContents.toString().split('\n');
+    const lines = fileContents.toString().trim().split('\n');
 
     for (let i = 0; i < lines.length; i += 1) {
       if (lines[i]) {
@@ -41,3 +41,5 @@ const countStudents = (dataPath) => {
 };
 
 module.exports = countStudents;
+
+countStudents('database.csv');
